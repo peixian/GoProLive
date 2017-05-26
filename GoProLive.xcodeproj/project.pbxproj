@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA5972901ED7A2FE000A1B37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59728F1ED7A2FE000A1B37 /* AppDelegate.swift */; };
+		DA5972921ED7A2FE000A1B37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972911ED7A2FE000A1B37 /* ViewController.swift */; };
+		DA5972951ED7A2FE000A1B37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5972931ED7A2FE000A1B37 /* Main.storyboard */; };
+		DA5972981ED7A2FE000A1B37 /* GoProLive.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA5972961ED7A2FE000A1B37 /* GoProLive.xcdatamodeld */; };
+		DA59729A1ED7A2FE000A1B37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA5972991ED7A2FE000A1B37 /* Assets.xcassets */; };
+		DA59729D1ED7A2FE000A1B37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA59729B1ED7A2FE000A1B37 /* LaunchScreen.storyboard */; };
+		DA5972A81ED7A2FE000A1B37 /* GoProLiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972A71ED7A2FE000A1B37 /* GoProLiveTests.swift */; };
+		DA5972B31ED7A2FE000A1B37 /* GoProLiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972B21ED7A2FE000A1B37 /* GoProLiveUITests.swift */; };
+		DA5972C21ED7A402000A1B37 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5972C11ED7A402000A1B37 /* Alamofire.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA5972A41ED7A2FE000A1B37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA5972841ED7A2FE000A1B37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA59728B1ED7A2FE000A1B37;
+			remoteInfo = GoProLive;
+		};
+		DA5972AF1ED7A2FE000A1B37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA5972841ED7A2FE000A1B37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA59728B1ED7A2FE000A1B37;
+			remoteInfo = GoProLive;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DA59728C1ED7A2FE000A1B37 /* GoProLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoProLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA59728F1ED7A2FE000A1B37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DA5972911ED7A2FE000A1B37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DA5972941ED7A2FE000A1B37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DA5972971ED7A2FE000A1B37 /* GoProLive.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoProLive.xcdatamodel; sourceTree = "<group>"; };
+		DA5972991ED7A2FE000A1B37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA59729C1ED7A2FE000A1B37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA59729E1ED7A2FE000A1B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA5972A31ED7A2FE000A1B37 /* GoProLiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoProLiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA5972A71ED7A2FE000A1B37 /* GoProLiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoProLiveTests.swift; sourceTree = "<group>"; };
+		DA5972A91ED7A2FE000A1B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA5972AE1ED7A2FE000A1B37 /* GoProLiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoProLiveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA5972B21ED7A2FE000A1B37 /* GoProLiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoProLiveUITests.swift; sourceTree = "<group>"; };
+		DA5972B41ED7A2FE000A1B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA5972C11ED7A402000A1B37 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA5972891ED7A2FE000A1B37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA5972C21ED7A402000A1B37 /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5972A01ED7A2FE000A1B37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5972AB1ED7A2FE000A1B37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA5972831ED7A2FE000A1B37 = {
+			isa = PBXGroup;
+			children = (
+				DA59728E1ED7A2FE000A1B37 /* GoProLive */,
+				DA5972A61ED7A2FE000A1B37 /* GoProLiveTests */,
+				DA5972B11ED7A2FE000A1B37 /* GoProLiveUITests */,
+				DA59728D1ED7A2FE000A1B37 /* Products */,
+				DA5972C01ED7A402000A1B37 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DA59728D1ED7A2FE000A1B37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA59728C1ED7A2FE000A1B37 /* GoProLive.app */,
+				DA5972A31ED7A2FE000A1B37 /* GoProLiveTests.xctest */,
+				DA5972AE1ED7A2FE000A1B37 /* GoProLiveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA59728E1ED7A2FE000A1B37 /* GoProLive */ = {
+			isa = PBXGroup;
+			children = (
+				DA59728F1ED7A2FE000A1B37 /* AppDelegate.swift */,
+				DA5972911ED7A2FE000A1B37 /* ViewController.swift */,
+				DA5972931ED7A2FE000A1B37 /* Main.storyboard */,
+				DA5972991ED7A2FE000A1B37 /* Assets.xcassets */,
+				DA59729B1ED7A2FE000A1B37 /* LaunchScreen.storyboard */,
+				DA59729E1ED7A2FE000A1B37 /* Info.plist */,
+				DA5972961ED7A2FE000A1B37 /* GoProLive.xcdatamodeld */,
+			);
+			path = GoProLive;
+			sourceTree = "<group>";
+		};
+		DA5972A61ED7A2FE000A1B37 /* GoProLiveTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA5972A71ED7A2FE000A1B37 /* GoProLiveTests.swift */,
+				DA5972A91ED7A2FE000A1B37 /* Info.plist */,
+			);
+			path = GoProLiveTests;
+			sourceTree = "<group>";
+		};
+		DA5972B11ED7A2FE000A1B37 /* GoProLiveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DA5972B21ED7A2FE000A1B37 /* GoProLiveUITests.swift */,
+				DA5972B41ED7A2FE000A1B37 /* Info.plist */,
+			);
+			path = GoProLiveUITests;
+			sourceTree = "<group>";
+		};
+		DA5972C01ED7A402000A1B37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA5972C11ED7A402000A1B37 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA59728B1ED7A2FE000A1B37 /* GoProLive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA5972B71ED7A2FE000A1B37 /* Build configuration list for PBXNativeTarget "GoProLive" */;
+			buildPhases = (
+				DA5972881ED7A2FE000A1B37 /* Sources */,
+				DA5972891ED7A2FE000A1B37 /* Frameworks */,
+				DA59728A1ED7A2FE000A1B37 /* Resources */,
+				DA5972C31ED7A418000A1B37 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoProLive;
+			productName = GoProLive;
+			productReference = DA59728C1ED7A2FE000A1B37 /* GoProLive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA5972A21ED7A2FE000A1B37 /* GoProLiveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA5972BA1ED7A2FE000A1B37 /* Build configuration list for PBXNativeTarget "GoProLiveTests" */;
+			buildPhases = (
+				DA59729F1ED7A2FE000A1B37 /* Sources */,
+				DA5972A01ED7A2FE000A1B37 /* Frameworks */,
+				DA5972A11ED7A2FE000A1B37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA5972A51ED7A2FE000A1B37 /* PBXTargetDependency */,
+			);
+			name = GoProLiveTests;
+			productName = GoProLiveTests;
+			productReference = DA5972A31ED7A2FE000A1B37 /* GoProLiveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DA5972AD1ED7A2FE000A1B37 /* GoProLiveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA5972BD1ED7A2FE000A1B37 /* Build configuration list for PBXNativeTarget "GoProLiveUITests" */;
+			buildPhases = (
+				DA5972AA1ED7A2FE000A1B37 /* Sources */,
+				DA5972AB1ED7A2FE000A1B37 /* Frameworks */,
+				DA5972AC1ED7A2FE000A1B37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA5972B01ED7A2FE000A1B37 /* PBXTargetDependency */,
+			);
+			name = GoProLiveUITests;
+			productName = GoProLiveUITests;
+			productReference = DA5972AE1ED7A2FE000A1B37 /* GoProLiveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA5972841ED7A2FE000A1B37 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "DeLosSantos, Louis";
+				TargetAttributes = {
+					DA59728B1ED7A2FE000A1B37 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = X447KQR49A;
+						ProvisioningStyle = Automatic;
+					};
+					DA5972A21ED7A2FE000A1B37 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = X447KQR49A;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DA59728B1ED7A2FE000A1B37;
+					};
+					DA5972AD1ED7A2FE000A1B37 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = X447KQR49A;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DA59728B1ED7A2FE000A1B37;
+					};
+				};
+			};
+			buildConfigurationList = DA5972871ED7A2FE000A1B37 /* Build configuration list for PBXProject "GoProLive" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA5972831ED7A2FE000A1B37;
+			productRefGroup = DA59728D1ED7A2FE000A1B37 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA59728B1ED7A2FE000A1B37 /* GoProLive */,
+				DA5972A21ED7A2FE000A1B37 /* GoProLiveTests */,
+				DA5972AD1ED7A2FE000A1B37 /* GoProLiveUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA59728A1ED7A2FE000A1B37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA59729D1ED7A2FE000A1B37 /* LaunchScreen.storyboard in Resources */,
+				DA59729A1ED7A2FE000A1B37 /* Assets.xcassets in Resources */,
+				DA5972951ED7A2FE000A1B37 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5972A11ED7A2FE000A1B37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5972AC1ED7A2FE000A1B37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DA5972C31ED7A418000A1B37 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA5972881ED7A2FE000A1B37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA5972921ED7A2FE000A1B37 /* ViewController.swift in Sources */,
+				DA5972901ED7A2FE000A1B37 /* AppDelegate.swift in Sources */,
+				DA5972981ED7A2FE000A1B37 /* GoProLive.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA59729F1ED7A2FE000A1B37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA5972A81ED7A2FE000A1B37 /* GoProLiveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5972AA1ED7A2FE000A1B37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA5972B31ED7A2FE000A1B37 /* GoProLiveUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA5972A51ED7A2FE000A1B37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA59728B1ED7A2FE000A1B37 /* GoProLive */;
+			targetProxy = DA5972A41ED7A2FE000A1B37 /* PBXContainerItemProxy */;
+		};
+		DA5972B01ED7A2FE000A1B37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA59728B1ED7A2FE000A1B37 /* GoProLive */;
+			targetProxy = DA5972AF1ED7A2FE000A1B37 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DA5972931ED7A2FE000A1B37 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA5972941ED7A2FE000A1B37 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DA59729B1ED7A2FE000A1B37 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA59729C1ED7A2FE000A1B37 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA5972B51ED7A2FE000A1B37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DA5972B61ED7A2FE000A1B37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA5972B81ED7A2FE000A1B37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X447KQR49A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = GoProLive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = webshits.GoProLive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		DA5972B91ED7A2FE000A1B37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X447KQR49A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = GoProLive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = webshits.GoProLive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		DA5972BB1ED7A2FE000A1B37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = X447KQR49A;
+				INFOPLIST_FILE = GoProLiveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = webshits.GoProLiveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoProLive.app/GoProLive";
+			};
+			name = Debug;
+		};
+		DA5972BC1ED7A2FE000A1B37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = X447KQR49A;
+				INFOPLIST_FILE = GoProLiveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = webshits.GoProLiveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoProLive.app/GoProLive";
+			};
+			name = Release;
+		};
+		DA5972BE1ED7A2FE000A1B37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = X447KQR49A;
+				INFOPLIST_FILE = GoProLiveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = webshits.GoProLiveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GoProLive;
+			};
+			name = Debug;
+		};
+		DA5972BF1ED7A2FE000A1B37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = X447KQR49A;
+				INFOPLIST_FILE = GoProLiveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = webshits.GoProLiveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GoProLive;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA5972871ED7A2FE000A1B37 /* Build configuration list for PBXProject "GoProLive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA5972B51ED7A2FE000A1B37 /* Debug */,
+				DA5972B61ED7A2FE000A1B37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA5972B71ED7A2FE000A1B37 /* Build configuration list for PBXNativeTarget "GoProLive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA5972B81ED7A2FE000A1B37 /* Debug */,
+				DA5972B91ED7A2FE000A1B37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DA5972BA1ED7A2FE000A1B37 /* Build configuration list for PBXNativeTarget "GoProLiveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA5972BB1ED7A2FE000A1B37 /* Debug */,
+				DA5972BC1ED7A2FE000A1B37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DA5972BD1ED7A2FE000A1B37 /* Build configuration list for PBXNativeTarget "GoProLiveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA5972BE1ED7A2FE000A1B37 /* Debug */,
+				DA5972BF1ED7A2FE000A1B37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DA5972961ED7A2FE000A1B37 /* GoProLive.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DA5972971ED7A2FE000A1B37 /* GoProLive.xcdatamodel */,
+			);
+			currentVersion = DA5972971ED7A2FE000A1B37 /* GoProLive.xcdatamodel */;
+			path = GoProLive.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DA5972841ED7A2FE000A1B37 /* Project object */;
+}

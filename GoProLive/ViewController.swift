@@ -9,21 +9,44 @@
 import UIKit
 import Alamofire
 
+
 class ViewController: UIViewController, UITextFieldDelegate {
+    var gp: GoPro? = nil
+    var proxy: Proxy? = nil
+    
+    //MARK: Outlets
+    @IBOutlet weak var pairingCodeInputField: UITextField!
+    @IBOutlet weak var isConnectedField: UITextField!
     
     //MARK: Actions
-    @IBAction func requestCall(_ sender: UIButton) {
-        Alamofire.request("http://www.google.com").response { response in
-            let sCode = "\(response.response!.statusCode)"
-            self.responseDisplay.text = sCode
+    @IBAction func pairingCodeInputButton(_ sender: UIButton) {
+        self.gp = GoPro()
+        
+        // Check that value is in input field
+        let pairingCode = Int(pairingCodeInputField.text!)
+        if pairingCode != nil {
+            self.gp?.pairingCode = pairingCode!
+            //TODO: Add try catch
+            self.gp?.startPair()
+        }
+    }
+    
+    @IBAction func startStreamingButton(_ sender: UIButton) {
+        if !self.gp!.isConnected{
+            print("Is not paired, attempt pairing again")
             return
         }
-        
+        self.gp?.startStream() { streamStatus in
+            if streamStatus {
+                // Start proxying
+                self.proxy = Proxy(gp: self.gp!)
+                self.proxy?.startProxying()
+            }
+            
+        }
     }
-
-    //MARK: Outlets
-    @IBOutlet weak var responseDisplay: UITextField!
     
+    //MARK: UIViewController implementations
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

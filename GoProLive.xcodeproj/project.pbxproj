@@ -16,6 +16,10 @@
 		DA5972A81ED7A2FE000A1B37 /* GoProLiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972A71ED7A2FE000A1B37 /* GoProLiveTests.swift */; };
 		DA5972B31ED7A2FE000A1B37 /* GoProLiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5972B21ED7A2FE000A1B37 /* GoProLiveUITests.swift */; };
 		DA5972C21ED7A402000A1B37 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5972C11ED7A402000A1B37 /* Alamofire.framework */; };
+		DA65B65B1EDDD25900D02F7C /* GoPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65B65A1EDDD25900D02F7C /* GoPro.swift */; };
+		DA65B65F1EDE0A9B00D02F7C /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA65B65E1EDE0A9B00D02F7C /* CocoaAsyncSocket.framework */; };
+		DA65B6621EDE0BBA00D02F7C /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65B6611EDE0BBA00D02F7C /* Proxy.swift */; };
+		DA65B6641EDE0EFB00D02F7C /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA65B6631EDE0EFB00D02F7C /* Socket.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,11 @@
 		DA5972B21ED7A2FE000A1B37 /* GoProLiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoProLiveUITests.swift; sourceTree = "<group>"; };
 		DA5972B41ED7A2FE000A1B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA5972C11ED7A402000A1B37 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		DA65B65A1EDDD25900D02F7C /* GoPro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoPro.swift; sourceTree = "<group>"; };
+		DA65B65C1EDE0A8D00D02F7C /* CocoaAsyncSocket.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CocoaAsyncSocket.framework.dSYM; path = Carthage/Build/iOS/CocoaAsyncSocket.framework.dSYM; sourceTree = "<group>"; };
+		DA65B65E1EDE0A9B00D02F7C /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		DA65B6611EDE0BBA00D02F7C /* Proxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; };
+		DA65B6631EDE0EFB00D02F7C /* Socket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Socket.framework; path = Carthage/Build/iOS/Socket.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +68,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA5972C21ED7A402000A1B37 /* Alamofire.framework in Frameworks */,
+				DA65B65F1EDE0A9B00D02F7C /* CocoaAsyncSocket.framework in Frameworks */,
+				DA65B6641EDE0EFB00D02F7C /* Socket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +121,8 @@
 				DA59729B1ED7A2FE000A1B37 /* LaunchScreen.storyboard */,
 				DA59729E1ED7A2FE000A1B37 /* Info.plist */,
 				DA5972961ED7A2FE000A1B37 /* GoProLive.xcdatamodeld */,
+				DA65B65A1EDDD25900D02F7C /* GoPro.swift */,
+				DA65B6611EDE0BBA00D02F7C /* Proxy.swift */,
 			);
 			path = GoProLive;
 			sourceTree = "<group>";
@@ -135,6 +148,9 @@
 		DA5972C01ED7A402000A1B37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA65B6631EDE0EFB00D02F7C /* Socket.framework */,
+				DA65B65E1EDE0A9B00D02F7C /* CocoaAsyncSocket.framework */,
+				DA65B65C1EDE0A8D00D02F7C /* CocoaAsyncSocket.framework.dSYM */,
 				DA5972C11ED7A402000A1B37 /* Alamofire.framework */,
 			);
 			name = Frameworks;
@@ -281,6 +297,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CocoaAsyncSocket.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Socket.framework",
 			);
 			outputPaths = (
 			);
@@ -297,8 +315,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA5972921ED7A2FE000A1B37 /* ViewController.swift in Sources */,
+				DA65B65B1EDDD25900D02F7C /* GoPro.swift in Sources */,
 				DA5972901ED7A2FE000A1B37 /* AppDelegate.swift in Sources */,
 				DA5972981ED7A2FE000A1B37 /* GoProLive.xcdatamodeld in Sources */,
+				DA65B6621EDE0BBA00D02F7C /* Proxy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +577,7 @@
 				DA5972B91ED7A2FE000A1B37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA5972BA1ED7A2FE000A1B37 /* Build configuration list for PBXNativeTarget "GoProLiveTests" */ = {
 			isa = XCConfigurationList;
@@ -565,6 +586,7 @@
 				DA5972BC1ED7A2FE000A1B37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA5972BD1ED7A2FE000A1B37 /* Build configuration list for PBXNativeTarget "GoProLiveUITests" */ = {
 			isa = XCConfigurationList;
@@ -573,6 +595,7 @@
 				DA5972BF1ED7A2FE000A1B37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

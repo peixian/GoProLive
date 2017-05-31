@@ -20,6 +20,7 @@
 		DA65B65F1EDE0A9B00D02F7C /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA65B65E1EDE0A9B00D02F7C /* CocoaAsyncSocket.framework */; };
 		DA65B6621EDE0BBA00D02F7C /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65B6611EDE0BBA00D02F7C /* Proxy.swift */; };
 		DA65B6641EDE0EFB00D02F7C /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA65B6631EDE0EFB00D02F7C /* Socket.framework */; };
+		DA8854C01EDF67A900233D93 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8854BF1EDF67A900233D93 /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		DA65B65E1EDE0A9B00D02F7C /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		DA65B6611EDE0BBA00D02F7C /* Proxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; };
 		DA65B6631EDE0EFB00D02F7C /* Socket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Socket.framework; path = Carthage/Build/iOS/Socket.framework; sourceTree = "<group>"; };
+		DA8854BF1EDF67A900233D93 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				DA5972961ED7A2FE000A1B37 /* GoProLive.xcdatamodeld */,
 				DA65B65A1EDDD25900D02F7C /* GoPro.swift */,
 				DA65B6611EDE0BBA00D02F7C /* Proxy.swift */,
+				DA8854BF1EDF67A900233D93 /* Queue.swift */,
 			);
 			path = GoProLive;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA5972921ED7A2FE000A1B37 /* ViewController.swift in Sources */,
+				DA8854C01EDF67A900233D93 /* Queue.swift in Sources */,
 				DA65B65B1EDDD25900D02F7C /* GoPro.swift in Sources */,
 				DA5972901ED7A2FE000A1B37 /* AppDelegate.swift in Sources */,
 				DA5972981ED7A2FE000A1B37 /* GoProLive.xcdatamodeld in Sources */,

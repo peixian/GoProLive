@@ -9,6 +9,8 @@
 import Foundation
 import CocoaAsyncSocket
 
+let packetEnqueueKey = "packetEnqueue"
+
 
 class Proxy: NSObject, GCDAsyncUdpSocketDelegate {
     var goPro: GoPro? = nil
@@ -18,23 +20,39 @@ class Proxy: NSObject, GCDAsyncUdpSocketDelegate {
     var keepAliveSocket: GCDAsyncUdpSocket? = nil
     var timerQueue: DispatchQueue? = nil
     var timer: DispatchSourceTimer? = nil
-    
-        
+    var packetQueue: Queue<Data>? = nil
+
     
     init(gp goPro: GoPro) {
         self.goPro = goPro
+        self.packetQueue = Queue<Data>()
+        
     }
     
     func udpSocket(_ sock: GCDAsyncUdpSocket, didReceive data: Data, fromAddress address: Data, withFilterContext filterContext: Any?) {
 
-        var host: NSString?
-        var port: UInt16 = 0
-        GCDAsyncUdpSocket.getHost(&host, port: &port, fromAddress: address)
         print(data)
         
-        // Forward data to ingest server
-        self.outSocket!.send(data, toHost: self.ingestServerAddr, port: self.ingestServerPort, withTimeout: 1000, tag: 0)
+        // Write data to Queue
+        self.packetQueue?.enqueue(value: data)
         
+        //send a notification
+        NotificationCenter.default.post(name: Notification.Name(rawValue: packetEnqueueKey), object: self)
+    }
+    
+    func dequeue() {
+        // Read off Queue
+        var packet = self.packetQueue?.dequeue()
+        
+        while packet != nil {
+            print("Dequeued Packet: \(packet)")
+            
+            self.outSocket!.send(packet!, toHost: self.ingestServerAddr, port: self.ingestServerPort, withTimeout: 1000, tag: 0)
+            
+            packet = self.packetQueue?.dequeue()
+        
+       
+        }
     }
     
     func startProxying() {
@@ -45,7 +63,6 @@ class Proxy: NSObject, GCDAsyncUdpSocketDelegate {
             try socket.bind(toPort: UInt16(self.goPro!.streamingPort))
             try socket.beginReceiving()
             self.keepAliveSocket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
-            
             self.outSocket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
             
         } catch {
@@ -71,10 +88,9 @@ class Proxy: NSObject, GCDAsyncUdpSocketDelegate {
             self?.keepAliveSocket!.send(d, toHost: (self?.goPro?.goProIP)!, port: UInt16((self?.goPro?.streamingPort)!), withTimeout: 1000, tag: 0)
             
         }
-        
         timer!.activate()
-    
         
+        NotificationCenter.default.addObserver(self, selector: #selector(Proxy.dequeue), name: NSNotification.Name(rawValue: packetEnqueueKey), object: nil)
     }
     
 }

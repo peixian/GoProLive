@@ -32,6 +32,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func startStreamingButton(_ sender: UIButton) {
+        self.gp = GoPro()
+        self.gp?.isConnected = true
+        
         if !self.gp!.isConnected{
             print("Is not paired, attempt pairing again")
             return
@@ -40,6 +43,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if streamStatus {
                 // Start proxying
                 self.proxy = Proxy(gp: self.gp!)
+                self.proxy?.ingestServerAddr = "127.0.0.1"
+                self.proxy?.ingestServerPort = 5566
                 self.proxy?.startProxying()
             }
             

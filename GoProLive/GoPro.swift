@@ -13,7 +13,7 @@ import Alamofire
 class GoPro {
     var pairingCode: Int = 0
     let goProIP: String = "10.5.5.9"
-    let streamingPort: Int32 = 8554
+    let streamingPort: Int16 = 8554
     var isConnected = false
     var isStreaming = false
     let httpClient: Alamofire.SessionManager = {

@@ -47,7 +47,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.proxy?.ingestServerPort = 5566
                 self.proxy?.startProxying()
             }
-            
         }
     }
     

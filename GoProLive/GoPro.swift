@@ -53,7 +53,7 @@ class GoPro {
         
                 case.failure(let error):
                     print("Could not finish pairing #2 \(error)")
-    
+
                     completionHandler(0 as Int)
                 }
         }

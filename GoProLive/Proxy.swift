@@ -21,11 +21,13 @@ class Proxy: NSObject, GCDAsyncUdpSocketDelegate {
     var timerQueue: DispatchQueue? = nil
     var timer: DispatchSourceTimer? = nil
     var packetQueue: Queue<Data>? = nil
+    var observerQueue: OperationQueue? = nil
 
     
     init(gp goPro: GoPro) {
         self.goPro = goPro
         self.packetQueue = Queue<Data>()
+        self.observerQueue = OperationQueue()
         
     }
     
@@ -45,13 +47,11 @@ class Proxy: NSObject, GCDAsyncUdpSocketDelegate {
         var packet = self.packetQueue?.dequeue()
         
         while packet != nil {
-            print("Dequeued Packet: \(packet)")
+            print("Dequeued Packet:\(String(describing: packet))")
             
             self.outSocket!.send(packet!, toHost: self.ingestServerAddr, port: self.ingestServerPort, withTimeout: 1000, tag: 0)
             
             packet = self.packetQueue?.dequeue()
-        
-       
         }
     }
     
@@ -70,18 +70,15 @@ class Proxy: NSObject, GCDAsyncUdpSocketDelegate {
         }
         
         // Schedule keepAlive task
-        timerQueue = DispatchQueue(label: "keepAliveQueue")
+        self.timerQueue = DispatchQueue(label: "keepAliveQueue")
         timer = DispatchSource.makeTimerSource(queue: self.timerQueue!)
-        
         timer!.scheduleRepeating(deadline: DispatchTime.now(), interval: DispatchTimeInterval.seconds(2))
-        
         timer!.setEventHandler() { [weak self] in
             print("Sending a keep alive!!")
             
             // Construct byte array
             let msg: [UInt8] = Array("_GPHD_:0:0:2:0.000000".utf8)
             print(msg)
-            
             
             let d = Data(msg)
             
@@ -90,7 +87,11 @@ class Proxy: NSObject, GCDAsyncUdpSocketDelegate {
         }
         timer!.activate()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(Proxy.dequeue), name: NSNotification.Name(rawValue: packetEnqueueKey), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(Proxy.dequeue), name: NSNotification.Name(rawValue: packetEnqueueKey), object: nil, queue: self.timerQueue)
+        
+        NotificationCenter.default.addObserver(forName: nil, object: nil, queue: self.observerQueue) { _ in
+            self.dequeue()
+        }
     }
     
 }

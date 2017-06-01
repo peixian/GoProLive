@@ -29,6 +29,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //TODO: Add try catch
             self.gp?.startPair()
         }
+        
+        pairingCodeInputField.resignFirstResponder()
     }
     
     @IBAction func startStreamingButton(_ sender: UIButton) {

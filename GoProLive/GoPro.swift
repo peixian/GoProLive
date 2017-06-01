@@ -19,7 +19,8 @@ class GoPro {
     let httpClient: Alamofire.SessionManager = {
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
         "localhost": .disableEvaluation,
-        "10.5.5.9": .disableEvaluation
+        "10.5.5.9": .disableEvaluation,
+        "35.185.59.154": .disableEvaluation,
         ]
         
         let configuration = URLSessionConfiguration.default
@@ -84,4 +85,5 @@ class GoPro {
                 }
         }
     }
+    
 }

@@ -13,10 +13,29 @@ import Alamofire
 class ViewController: UIViewController, UITextFieldDelegate {
     var gp: GoPro? = nil
     var proxy: Proxy? = nil
+    let httpClient: Alamofire.SessionManager = {
+        let serverTrustPolicies: [String: ServerTrustPolicy] = [
+            "localhost": .disableEvaluation,
+            "10.5.5.9": .disableEvaluation,
+            "35.185.59.154": .disableEvaluation,
+            ]
+        
+        let configuration = URLSessionConfiguration.default
+        configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
+        
+        return Alamofire.SessionManager(
+            configuration: configuration,
+            serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies))
+    }()
+    var streamingIP = ""
+    var streamingPort = ""
     
     //MARK: Outlets
     @IBOutlet weak var pairingCodeInputField: UITextField!
     @IBOutlet weak var isConnectedField: UITextField!
+    @IBOutlet weak var ingestServerIP: UITextField!
+    @IBOutlet weak var ingestServerPort: UITextField!
+    @IBOutlet weak var urlField: UITextField!
     
     //MARK: Actions
     @IBAction func pairingCodeInputButton(_ sender: UIButton) {
@@ -34,6 +53,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func startStreamingButton(_ sender: UIButton) {
+        self.ingestServerIP.resignFirstResponder()
+        self.ingestServerPort.resignFirstResponder()
+        
         self.gp = GoPro()
         self.gp?.isConnected = true
         
@@ -41,15 +63,33 @@ class ViewController: UIViewController, UITextFieldDelegate {
             print("Is not paired, attempt pairing again")
             return
         }
-        self.gp?.startStream() { streamStatus in
-            if streamStatus {
-                // Start proxying
-                self.proxy = Proxy(gp: self.gp!)
-                self.proxy?.ingestServerAddr = "127.0.0.1"
-                self.proxy?.ingestServerPort = 5566
-                self.proxy?.startProxying()
-            }
+        
+        httpClient.request("http://35.185.59.154:8080/new")
+            .responseJSON { response in
+                self.streamingPort = String(data: response.data!, encoding: .utf8)!
+                self.urlField.text = "http://35.185.59.154:8080/\(self.streamingPort)/hls"
+                print("Streaming Port")
+                print(self.streamingPort)
+                self.gp?.startStream() { streamStatus in
+                    if streamStatus {
+                        // Start proxying
+                        self.proxy = Proxy(gp: self.gp!)
+//                        self.proxy?.ingestServerAddr = self.ingestServerIP.text!
+                        self.proxy?.ingestServerAddr = "35.185.59.154"
+                        self.proxy?.ingestServerPort = UInt16(self.streamingPort)!
+                        self.proxy?.startProxying()
+                    }
+                }
+                
         }
+
+    }
+    @IBAction func stopStreamingButton(_ sender: Any) {
+        if self.proxy == nil {
+            print("Tried to stop streaming with no active stream")
+            return
+        }
+        self.proxy!.stopProxying()
     }
     
     //MARK: UIViewController implementations

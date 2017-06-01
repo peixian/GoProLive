@@ -22,13 +22,14 @@ class Proxy: NSObject, GCDAsyncUdpSocketDelegate {
     var timer: DispatchSourceTimer? = nil
     var packetQueue: Queue<Data>? = nil
     var observerQueue: OperationQueue? = nil
+    var socket: GCDAsyncUdpSocket
 
     
     init(gp goPro: GoPro) {
         self.goPro = goPro
         self.packetQueue = Queue<Data>()
         self.observerQueue = OperationQueue()
-        
+        self.socket = GCDAsyncUdpSocket()
     }
     
     func udpSocket(_ sock: GCDAsyncUdpSocket, didReceive data: Data, fromAddress address: Data, withFilterContext filterContext: Any?) {
@@ -57,11 +58,11 @@ class Proxy: NSObject, GCDAsyncUdpSocketDelegate {
     
     func startProxying() {
         
-        let socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
+        self.socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
         
         do {
-            try socket.bind(toPort: UInt16(self.goPro!.streamingPort))
-            try socket.beginReceiving()
+            try self.socket.bind(toPort: UInt16(self.goPro!.streamingPort))
+            try self.socket.beginReceiving()
             self.keepAliveSocket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
             self.outSocket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
             
@@ -92,6 +93,11 @@ class Proxy: NSObject, GCDAsyncUdpSocketDelegate {
         NotificationCenter.default.addObserver(forName: nil, object: nil, queue: self.observerQueue) { _ in
             self.dequeue()
         }
+    }
+    
+    func stopProxying() {
+        self.socket.close()
+        print("Closed the streaming socket from gopro")
     }
     
 }

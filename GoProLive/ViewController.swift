@@ -89,6 +89,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             print("Tried to stop streaming with no active stream")
             return
         }
+        self.urlField.text = "Stream ended."
         self.proxy!.stopProxying()
     }
     
